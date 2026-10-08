@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Something For You ✨</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffd6e7,
+          #f7c9dc,
+          #e8c8ed,
+          #d3dcff
+        );
+
+      color: #3b2940;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 15px;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    .glow {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(75px);
+      opacity: .35;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow.one {
+      width: 280px;
+      height: 280px;
+      background: #ff8fbd;
+      top: -90px;
+      left: -90px;
+    }
+
+    .glow.two {
+      width: 320px;
+      height: 320px;
+      background: #b69cff;
+      bottom: -100px;
+      right: -100px;
+    }
+
+    .glow.three {
+      width: 220px;
+      height: 220px;
+      background: #8edcff;
+      top: 45%;
+      left: 45%;
+    }
+
+    .dot {
+      position: fixed;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.75);
+      animation: floatDot 5s infinite ease-in-out;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .dot1 {
+      top: 15%;
+      left: 15%;
+    }
+
+    .dot2 {
+      top: 25%;
+      right: 15%;
+      animation-delay: 1s;
+    }
+
+    .dot3 {
+      bottom: 20%;
+      left: 20%;
+      animation-delay: 2s;
+    }
+
+    .dot4 {
+      bottom: 15%;
+      right: 25%;
+      animation-delay: 3s;
+    }
+
+    @keyframes floatDot {
+      0%,100% {
+        transform: translateY(0);
+        opacity: .35;
+      }
+
+      50% {
+        transform: translateY(-20px);
+        opacity: 1;
+      }
+    }
+
+    /* =========================
+       MAIN CARD
+    ========================= */
+
+    .card {
+      position: relative;
+      z-index: 5;
+
+      width: min(720px, 100%);
+
+      min-height: 540px;
+
+      padding: 45px 35px;
+
+      border-radius: 32px;
+
+      background: rgba(255,255,255,.40);
+
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+
+      border: 1px solid rgba(255,255,255,.6);
+
+      box-shadow:
+        0 25px 70px rgba(91,54,90,.18);
+
+      overflow: hidden;
+    }
+
+    /* =========================
+       SCREENS
+    ========================= */
+
+    .screen {
+      width: 100%;
+      display: none;
+
+      text-align: center;
+
+      animation: fadeIn .6s ease;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+    /* =========================
+       TEXT
+    ========================= */
+
+    .small {
+      font-size: 14px;
+      color: #8c718e;
+      margin-bottom: 12px;
+      letter-spacing: .5px;
+    }
+
+    h1 {
+      font-size: clamp(34px,6vw,52px);
+      color: #4b3151;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(26px,5vw,38px);
+      color: #4b3151;
+      margin-bottom: 18px;
+    }
+
+    p {
+      max-width: 580px;
+      margin: 0 auto 25px;
+
+      font-size: 17px;
+      line-height: 1.7;
+
+      color: #654d67;
+    }
+
+    .script {
+      font-family: "Great Vibes", cursive;
+      font-size: 50px;
+      color: #9a507e;
+      margin-bottom: 15px;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    button {
+      border: none;
+      outline: none;
+
+      padding: 14px 25px;
+
+      border-radius: 50px;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e77cac,
+          #a87edb
+        );
+
+      box-shadow:
+        0 10px 25px rgba(180,102,157,.25);
+
+      cursor: pointer;
+
+      transition: .25s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.02);
+
+      box-shadow:
+        0 15px 30px rgba(180,102,157,.35);
+    }
+
+    button:active {
+      transform: scale(.96);
+    }
+
+    /* =========================
+       OBSERVATIONS
+    ========================= */
+
+    .observations {
+      display: grid;
+      gap: 15px;
+
+      max-width: 580px;
+
+      margin: 25px auto;
+    }
+
+    .observation {
+      text-align: left;
+
+      padding: 18px 20px;
+
+      border-radius: 20px;
+
+      background: rgba(255,255,255,.42);
+
+      border:
+        1px solid rgba(255,255,255,.55);
+
+      transition: .25s ease;
+    }
+
+    .observation:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,.58);
+    }
+
+    .number {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ad6591;
+      margin-bottom: 5px;
+    }
+
+    .observation h3 {
+      font-size: 18px;
+      color: #4d3650;
+      margin-bottom: 5px;
+    }
+
+    .observation p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* =========================
+       YES / NO
+    ========================= */
+
+    .yes-no {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 20px;
+
+      min-height: 120px;
+
+      margin-top: 25px;
+    }
+
+    .yes-btn {
+      background:
+        linear-gradient(
+          135deg,
+          #e774a9,
+          #bd6fc9
+        );
+    }
+
+    .no-btn {
+      background: rgba(255,255,255,.75);
+      color: #855d7d;
+    }
+
+    /* =========================
+       DATE OPTIONS
+    ========================= */
+
+    .date-options {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap: 15px;
+
+      max-width: 520px;
+
+      margin: 30px auto;
+    }
+
+    .date-option {
+      padding: 22px 15px;
+
+      border-radius: 22px;
+
+      background: rgba(255,255,255,.45);
+
+      border:
+        1px solid rgba(255,255,255,.55);
+
+      color: #563d58;
+
+      font-size: 16px;
+      font-weight: 600;
+
+      cursor: pointer;
+
+      transition: .25s ease;
+    }
+
+    .date-option:hover {
+      transform: translateY(-5px);
+
+      background:
+        rgba(255,255,255,.7);
+
+      box-shadow:
+        0 12px 25px rgba(100,70,100,.12);
+    }
+
+    .selected-date {
+      font-size: 29px;
+      color: #9c527f;
+      font-weight: 700;
+      margin: 20px 0;
+    }
+
+    /* =========================
+       COMPLIMENT
+    ========================= */
+
+    .compliment-box {
+      max-width: 580px;
+
+      margin: 25px auto;
+
+      padding: 25px;
+
+      border-radius: 24px;
+
+      background:
+        rgba(255,255,255,.4);
+
+      border:
+        1px solid rgba(255,255,255,.55);
+    }
+
+    .compliment-box p {
+      margin-bottom: 12px;
+    }
+
+    /* =========================
+       FEEDBACK FORM
+    ========================= */
+
+    .feedback-form {
+      width: 100%;
+      max-width: 580px;
+
+      margin: 25px auto 0;
+
+      text-align: left;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question label {
+      display: block;
+
+      font-size: 15px;
+      font-weight: 700;
+
+      color: #5b405d;
+
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      width: 100%;
+
+      min-height: 105px;
+
+      resize: vertical;
+
+      border: 1px solid rgba(255,255,255,.65);
+
+      outline: none;
+
+      border-radius: 18px;
+
+      padding: 15px 17px;
+
+      font-family: "DM Sans", sans-serif;
+
+      font-size: 15px;
+
+      color: #4f3b51;
+
+      background:
+        rgba(255,255,255,.6);
+
+      transition: .25s ease;
+    }
+
+    textarea::placeholder {
+      color: #a48ca3;
+    }
+
+    textarea:focus {
+      background:
+        rgba(255,255,255,.82);
+
+      border-color:
+        rgba(190,110,160,.55);
+
+      box-shadow:
+        0 0 0 4px rgba(210,130,180,.12);
+    }
+
+    .submit-area {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .submit-btn {
+      min-width: 190px;
+    }
+
+    .form-error {
+      display: none;
+
+      margin-top: 15px;
+
+      padding: 12px;
+
+      border-radius: 15px;
+
+      background:
+        rgba(255,100,130,.12);
+
+      color: #9a4e65;
+
+      font-size: 14px;
+
+      text-align: center;
+    }
+
+    /* =========================
+       SUCCESS
+    ========================= */
+
+    .heart {
+      font-size: 65px;
+
+      margin-bottom: 15px;
+
+      animation:
+        heartBeat 1.3s infinite;
+    }
+
+    @keyframes heartBeat {
+
+      0%,100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
+
+    }
+
+    /* =========================
+       INTENTION PHOTO
+    ========================= */
+
+    .intention-image-wrapper {
+
+      width: 100%;
+      max-width: 430px;
+
+      margin: 25px auto 20px;
+
+      padding: 8px;
+
+      border-radius: 25px;
+
+      background:
+        rgba(255,255,255,.5);
+
+      border:
+        1px solid rgba(255,255,255,.6);
+
+      box-shadow:
+        0 18px 40px rgba(80,40,80,.18);
+
+      animation:
+        imageReveal .8s ease;
+    }
+
+    .intention-image {
+
+      display: block;
+
+      width: 100%;
+
+      max-height: 540px;
+
+      object-fit: cover;
+
+      border-radius: 19px;
+    }
+
+    .intention-caption {
+      font-size: 15px;
+      margin-top: 15px;
+      margin-bottom: 20px;
+    }
+
+    @keyframes imageReveal {
+
+      from {
+        opacity: 0;
+        transform:
+          scale(.88)
+          translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform:
+          scale(1)
+          translateY(0);
+      }
+
+    }
+
+    /* =========================
+       SCROLL HINT
+    ========================= */
+
+    .scroll-hint {
+
+      margin: 50px auto 20px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      color: #9a507e;
+
+      animation:
+        scrollBounce 1.8s infinite ease-in-out;
+    }
+
+    .scroll-hint span {
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size: 32px;
+
+      color: #9a507e;
+    }
+
+    .scroll-arrow {
+      font-size: 29px;
+      color: #b15b91;
+      margin-top: 3px;
+    }
+
+    @keyframes scrollBounce {
+
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(9px);
+      }
+
+    }
+
+    /* =========================
+       FINAL EYES SECTION
+    ========================= */
+
+    .final-love-section {
+
+      margin-top: 50px;
+
+      padding:
+        30px 10px 110px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 30px;
+
+      min-height: 500px;
+
+      position: relative;
+    }
+
+    .final-photo {
+
+      width: 280px;
+
+      padding: 8px;
+
+      border-radius: 25px;
+
+      background:
+        rgba(255,255,255,.55);
+
+      box-shadow:
+        0 20px 45px rgba(90,50,90,.22);
+
+      transform: rotate(-3deg);
+
+      transition: .4s ease;
+
+      flex-shrink: 0;
+    }
+
+    .final-photo:hover {
+
+      transform:
+        rotate(0deg)
+        scale(1.03);
+    }
+
+    .final-photo img {
+
+      display: block;
+
+      width: 100%;
+
+      border-radius: 19px;
+
+      object-fit: cover;
+    }
+
+    .final-message {
+
+      text-align: left;
+
+      max-width: 230px;
+    }
+
+    .tiny-heart {
+
+      font-size: 40px;
+
+      color: #c15b91;
+
+      margin-bottom: 5px;
+
+      animation:
+        tinyHeart 1.5s infinite;
+    }
+
+    @keyframes tinyHeart {
+
+      0%,100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+
+    }
+
+    .love-text {
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size: 48px;
+
+      line-height: 1.05;
+
+      color: #914b79;
+    }
+
+    .love-subtext {
+
+      margin-top: 14px;
+
+      font-size: 14px;
+
+      line-height: 1.6;
+
+      color: #795b76;
+    }
+
+    /* =========================
+       FLOATING HEARTS
+    ========================= */
+
+    .floating-heart {
+
+      position: absolute;
+
+      color:
+        rgba(180,90,145,.4);
+
+      font-size: 32px;
+
+      animation:
+        floatingHeart 4s infinite ease-in-out;
+
+      pointer-events: none;
+    }
+
+    .heart-one {
+      top: 15%;
+      left: 5%;
+    }
+
+    .heart-two {
+      bottom: 20%;
+      right: 5%;
+      animation-delay: 1s;
+    }
+
+    .heart-three {
+      top: 45%;
+      right: 10%;
+      animation-delay: 2s;
+    }
+
+    @keyframes floatingHeart {
+
+      0%,100% {
+        transform:
+          translateY(0)
+          rotate(0deg);
+
+        opacity: .35;
+      }
+
+      50% {
+        transform:
+          translateY(-15px)
+          rotate(8deg);
+
+        opacity: .8;
+      }
+
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width:600px) {
+
+      body {
+        padding: 10px;
+
+        align-items:
+          flex-start;
+      }
+
+      .card {
+
+        width: 100%;
+
+        padding:
+          35px 20px;
+
+        border-radius: 26px;
+
+        min-height: 570px;
+      }
+
+      h1 {
+        font-size: 35px;
+      }
+
+      h2 {
+        font-size: 27px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+
+      .script {
+        font-size: 42px;
+      }
+
+      .date-options {
+        grid-template-columns: 1fr;
+      }
+
+      .yes-no {
+        gap: 10px;
+      }
+
+      button {
+        padding:
+          13px 19px;
+      }
+
+      .intention-image {
+        max-height: 500px;
+      }
+
+      .final-love-section {
+
+        flex-direction:
+          column;
+
+        gap: 35px;
+
+        padding-bottom:
+          100px;
+      }
+
+      .final-photo {
+
+        width:
+          min(310px,90%);
+
+        transform:
+          rotate(-2deg);
+      }
+
+      .final-message {
+
+        text-align:
+          center;
+
+        max-width: 310px;
+      }
+
+      .love-text {
+        font-size: 44px;
+      }
+
+      .love-subtext {
+        text-align: center;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- BACKGROUND -->
+
+  <div class="glow one"></div>
+  <div class="glow two"></div>
+  <div class="glow three"></div>
+
+  <div class="dot dot1"></div>
+  <div class="dot dot2"></div>
+  <div class="dot dot3"></div>
+  <div class="dot dot4"></div>
+
+
+  <!-- MAIN CARD -->
+
+  <main class="card">
+
+
+    <!-- =========================
+         1. INTRO
+    ========================= -->
+
+    <section
+      class="screen active"
+      id="introScreen"
+    >
+
+      <div class="small">
+        Wait a second...
+      </div>
+
+      <h1>
+        Hey, Wait. 👀
+      </h1>
+
+      <p>
+        It’s been only 3 days since I met you…
+        and I’ve already discovered a few things
+        about you.
+      </p>
+
+      <button
+        onclick="showScreen('observationsScreen')"
+      >
+        Yes, I want to know →
+      </button>
+
+    </section>
+
+
+    <!-- =========================
+         2. OBSERVATIONS
+    ========================= -->
+
+    <section
+      class="screen"
+      id="observationsScreen"
+    >
+
+      <div class="small">
+        Things I've noticed...
+      </div>
+
+      <h2>
+        Okay, here we go. ✨
+      </h2>
+
+      <div class="observations">
+
+
+        <div class="observation">
+
+          <div class="number">
+            01
+          </div>
+
+          <h3>
+            You’re really beautiful. ✨
+          </h3>
+
+          <p>
+            And honestly, that was one of the
+            first things I noticed about you.
+          </p>
+
+        </div>
+
+
+        <div class="observation">
+
+          <div class="number">
+            02
+          </div>
+
+          <h3>
+            Your smile is really, really nice. 😊
+          </h3>
+
+          <p>
+            So nice that I actually end up
+            smiling while talking to you.
+          </p>
+
+        </div>
+
+
+        <div class="observation">
+
+          <div class="number">
+            03
+          </div>
+
+          <h3>
+            There’s one more thing...
+          </h3>
+
+          <p>
+            I also know that things didn’t go well
+            for you in your past relationship.
+            But I know you’ll move on from it
+            and find your happiness again.
+          </p>
+
+        </div>
+
+
+      </div>
+
+      <button
+        onclick="showScreen('moveForwardScreen')"
+      >
+        Move on →
+      </button>
+
+    </section>
+
+
+    <!-- =========================
+         3. MOVE FORWARD
+    ========================= -->
+
+    <section
+      class="screen"
+      id="moveForwardScreen"
+    >
+
+      <div class="script">
+        Ready?
+      </div>
+
+      <h2>
+        Ready to move forward? ✨
+      </h2>
+
+      <p>
+        Press the button below to move forward.
+      </p>
+
+      <button
+        onclick="showScreen('dateAskScreen')"
+      >
+        ENTER →
+      </button>
+
+    </section>
+
+
+    <!-- =========================
+         4. DATE ASK
+    ========================= -->
+
+    <section
+      class="screen"
+      id="dateAskScreen"
+    >
+
+      <div class="small">
+        Okay... one question 👀
+      </div>
+
+      <h2>
+        I want you to go on a date with me. ✨
+      </h2>
+
+      <p>
+        So... what do you say?
+      </p>
+
+      <div class="yes-no">
+
+        <button
+          class="yes-btn"
+          onclick="showScreen('dateChoiceScreen')"
+        >
+          Okay, we can go ❤️
+        </button>
+
+        <button
+          class="no-btn"
+          id="noButton"
+        >
+          No, I don’t want to 😭
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         5. DATE CHOICE
+    ========================= -->
+
+    <section
+      class="screen"
+      id="dateChoiceScreen"
+    >
+
+      <div class="small">
+        Choose carefully 😌
+      </div>
+
+      <h2>
+        What kind of date do you want? ✨
+      </h2>
+
+      <div class="date-options">
+
+        <div
+          class="date-option"
+          onclick="chooseDate('🎬 Movie')"
+        >
+          🎬 Movie
+        </div>
+
+        <div
+          class="date-option"
+          onclick="chooseDate('☕ Coffee')"
+        >
+          ☕ Coffee
+        </div>
+
+        <div
+          class="date-option"
+          onclick="chooseDate('🍿 Netflix & Chill')"
+        >
+          🍿 Netflix & Chill
+        </div>
+
+        <div
+          class="date-option"
+          onclick="chooseDate('✨ Something Special')"
+        >
+          ✨ Something Special
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         6. DATE SELECTED
+    ========================= -->
+
+    <section
+      class="screen"
+      id="dateSelectedScreen"
+    >
+
+      <div class="small">
+        Okay... decision made 😌
+      </div>
+
+      <h2>
+        Your choice is...
+      </h2>
+
+      <div
+        class="selected-date"
+        id="selectedDate"
+      ></div>
+
+      <p>
+        Okay, it’s decided then. 😌
+        <br>
+        Now let’s see where this goes...
+      </p>
+
+      <button
+        onclick="showScreen('complimentScreen')"
+      >
+        There’s something else →
+      </button>
+
+    </section>
+
+
+    <!-- =========================
+         7. COMPLIMENTS
+    ========================= -->
+
+    <section
+      class="screen"
+      id="complimentScreen"
+    >
+
+      <div class="small">
+        One little confession...
+      </div>
+
+      <h2>
+        There’s something else I need to admit...
+      </h2>
+
+      <div class="compliment-box">
+
+        <p>
+          Maybe I’ve noticed more than I should. 👀
+        </p>
+
+        <p>
+          I’m kind of addicted to your eyes.
+        </p>
+
+        <p>
+          Your smile is honestly so cute.
+        </p>
+
+        <p>
+          And your voice on calls...
+          it’s genuinely so sweet. ❤️
+        </p>
+
+      </div>
+
+      <button
+        onclick="showScreen('nextScreen')"
+      >
+        Continue →
+      </button>
+
+    </section>
+
+
+    <!-- =========================
+         8. NEXT
+    ========================= -->
+
+    <section
+      class="screen"
+      id="nextScreen"
+    >
+
+      <div class="small">
+        Okay... enough compliments 😌
+      </div>
+
+      <h2>
+        There’s still more.
+      </h2>
+
+      <p>
+        And I have a feeling you’re going
+        to like the next part. 👀
+      </p>
+
+      <button
+        onclick="showScreen('feedbackScreen')"
+      >
+        Tell me →
+      </button>
+
+    </section>
+
+
+    <!-- =========================
+         9. FEEDBACK
+    ========================= -->
+
+    <section
+      class="screen"
+      id="feedbackScreen"
+    >
+
+      <div class="small">
+        Now it's your turn 👀
+      </div>
+
+      <h2>
+        Tell me what you think about me. ✨
+      </h2>
+
+      <p>
+        I mean... tell me some noticeable things
+        you noticed, my qualities, and even my flaws.
+        Be honest — I actually want to know. 😌
+      </p>
+
+
+      <form
+        id="feedbackForm"
+        class="feedback-form"
+        action="https://formspree.io/f/mgavavzd"
+        method="POST"
+      >
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="She answered your questions ❤️"
+        >
+
+
+        <div class="question">
+
+          <label for="noticed">
+            ✨ What are some noticeable things
+            you noticed about me?
+          </label>
+
+          <textarea
+            id="noticed"
+            name="Noticeable things"
+            placeholder="Tell me what you noticed about me..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <div class="question">
+
+          <label for="qualities">
+            💎 What qualities do you think I have?
+          </label>
+
+          <textarea
+            id="qualities"
+            name="My qualities"
+            placeholder="What do you like about my personality?"
+            required
+          ></textarea>
+
+        </div>
+
+
+        <div class="question">
+
+          <label for="flaws">
+            😭 What are my flaws or things
+            I should improve?
+          </label>
+
+          <textarea
+            id="flaws"
+            name="My flaws / Things to improve"
+            placeholder="You can be completely honest..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <div class="submit-area">
+
+          <button
+            type="submit"
+            class="submit-btn"
+            id="submitButton"
+          >
+            Send it to me ❤️
+          </button>
+
+        </div>
+
+
+        <div
+          class="form-error"
+          id="formError"
+        >
+          Something went wrong 😭
+          Please try sending it again.
+        </div>
+
+
+      </form>
+
+    </section>
+
+
+    <!-- =========================
+         10. FORM SUCCESS
+    ========================= -->
+
+    <section
+      class="screen"
+      id="feedbackThanksScreen"
+    >
+
+      <div class="heart">
+        💌
+      </div>
+
+      <h2>
+        I got your answers. ❤️
+      </h2>
+
+      <p>
+        Thank you for being honest with me.
+        <br><br>
+        I’ll read everything properly. 👀
+      </p>
+
+      <button
+        onclick="showScreen('intentionQuestionScreen')"
+      >
+        There's one more thing... 👀
+      </button>
+
+    </section>
+
+
+    <!-- =========================
+         11. BAD INTENTIONS QUESTION
+    ========================= -->
+
+    <section
+      class="screen"
+      id="intentionQuestionScreen"
+    >
+
+      <div class="small">
+        Okay... one last thing 👀
+      </div>
+
+      <h2>
+        I know you have trust issues...
+      </h2>
+
+      <p>
+        But I have some bad intentions with you. 👀
+        <br><br>
+        Do you want to know what they are? 😏
+      </p>
+
+
+      <div class="yes-no">
+
+        <button
+          class="yes-btn"
+          onclick="showScreen('intentionRevealScreen')"
+        >
+          Yes, tell me 👀
+        </button>
+
+        <button
+          class="no-btn"
+          id="intentionNoButton"
+        >
+          No, I don't 😭
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         12. INTENTION REVEAL
+    ========================= -->
+
+    <section
+      class="screen"
+      id="intentionRevealScreen"
+    >
+
+      <div class="small">
+        You asked for it... 👀
+      </div>
+
+      <h2>
+        My intentions... 😏
+      </h2>
+
+
+      <!-- INTENTION PHOTO -->
+
+      <div class="intention-image-wrapper">
+
+        <img
+          src="Love.jpg"
+          alt="My intentions"
+          class="intention-image"
+        >
+
+      </div>
+
+
+      <p class="intention-caption">
+        Maybe now you understand what I meant. 😉
+      </p>
+
+
+      <!-- SCROLL DOWN -->
+
+      <div class="scroll-hint">
+
+        <span>
+          Scroll down
+        </span>
+
+        <div class="scroll-arrow">
+          ↓
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           FINAL EYES SECTION
+      ========================= -->
+
+      <div class="final-love-section">
+
+
+        <!-- HER EYES PHOTO -->
+
+        <div class="final-photo">
+
+          <img
+            src="HerEyes.jpg"
+            alt="Her beautiful eyes"
+          >
+
+        </div>
+
+
+        <!-- FINAL TEXT -->
+
+        <div class="final-message">
+
+          <div class="tiny-heart">
+            ♡
+          </div>
+
+          <div class="love-text">
+            I love her eyes.
+          </div>
+
+          <div class="love-subtext">
+            More than she probably knows. ✨
+          </div>
+
+        </div>
+
+
+        <!-- FLOATING HEARTS -->
+
+        <div class="floating-heart heart-one">
+          ♡
+        </div>
+
+        <div class="floating-heart heart-two">
+          ♡
+        </div>
+
+        <div class="floating-heart heart-three">
+          ♡
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <script>
+
+    /* =========================
+       CHANGE SCREEN
+    ========================= */
+
+    function showScreen(screenId) {
+
+      const screens =
+        document.querySelectorAll(".screen");
+
+
+      screens.forEach(function(screen) {
+
+        screen.classList.remove("active");
+
+      });
+
+
+      const target =
+        document.getElementById(screenId);
+
+
+      if (target) {
+
+        target.classList.add("active");
+
+      }
+
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+
+
+    /* =========================
+       DATE CHOICE
+    ========================= */
+
+    function chooseDate(date) {
+
+      document.getElementById(
+        "selectedDate"
+      ).textContent = date;
+
+
+      showScreen(
+        "dateSelectedScreen"
+      );
+
+    }
+
+
+    /* =========================
+       FIRST NO BUTTON
+    ========================= */
+
+    const noButton =
+      document.getElementById(
+        "noButton"
+      );
+
+
+    function moveNoButton() {
+
+      const container =
+        noButton.parentElement;
+
+      const containerRect =
+        container.getBoundingClientRect();
+
+      const buttonRect =
+        noButton.getBoundingClientRect();
+
+
+      const maxX =
+        Math.max(
+          0,
+          containerRect.width -
+          buttonRect.width
+        );
+
+
+      const maxY =
+        Math.max(
+          0,
+          containerRect.height -
+          buttonRect.height
+        );
+
+
+      const randomX =
+        Math.random() * maxX;
+
+      const randomY =
+        Math.random() * maxY;
+
+
+      noButton.style.position =
+        "absolute";
+
+      noButton.style.left =
+        randomX + "px";
+
+      noButton.style.top =
+        randomY + "px";
+
+    }
+
+
+    noButton.addEventListener(
+      "mouseenter",
+      moveNoButton
+    );
+
+
+    noButton.addEventListener(
+      "touchstart",
+      function(event) {
+
+        event.preventDefault();
+
+        moveNoButton();
+
+      },
+      {
+        passive: false
+      }
+    );
+
+
+    /* =========================
+       FORMSPREE
+    ========================= */
+
+    const feedbackForm =
+      document.getElementById(
+        "feedbackForm"
+      );
+
+
+    const submitButton =
+      document.getElementById(
+        "submitButton"
+      );
+
+
+    const formError =
+      document.getElementById(
+        "formError"
+      );
+
+
+    feedbackForm.addEventListener(
+      "submit",
+      async function(event) {
+
+        event.preventDefault();
+
+
+        formError.style.display =
+          "none";
+
+
+        submitButton.disabled =
+          true;
+
+
+        submitButton.textContent =
+          "Sending... 💌";
+
+
+        const formData =
+          new FormData(
+            feedbackForm
+          );
+
+
+        try {
+
+          const response =
+            await fetch(
+              feedbackForm.action,
+              {
+                method: "POST",
+
+                body: formData,
+
+                headers: {
+                  "Accept":
+                    "application/json"
+                }
+              }
+            );
+
+
+          if (response.ok) {
+
+            feedbackForm.reset();
+
+
+            submitButton.disabled =
+              false;
+
+
+            submitButton.textContent =
+              "Send it to me ❤️";
+
+
+            showScreen(
+              "feedbackThanksScreen"
+            );
+
+          }
+
+          else {
+
+            throw new Error(
+              "Form submission failed"
+            );
+
+          }
+
+        }
+
+        catch (error) {
+
+          console.error(error);
+
+
+          submitButton.disabled =
+            false;
+
+
+          submitButton.textContent =
+            "Try Again ❤️";
+
+
+          formError.style.display =
+            "block";
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       SECOND NO BUTTON
+    ========================= */
+
+    const intentionNoButton =
+      document.getElementById(
+        "intentionNoButton"
+      );
+
+
+    function moveIntentionNoButton() {
+
+      const container =
+        intentionNoButton.parentElement;
+
+      const containerRect =
+        container.getBoundingClientRect();
+
+      const buttonRect =
+        intentionNoButton.getBoundingClientRect();
+
+
+      const maxX =
+        Math.max(
+          0,
+          containerRect.width -
+          buttonRect.width
+        );
+
+
+      const maxY =
+        Math.max(
+          0,
+          containerRect.height -
+          buttonRect.height
+        );
+
+
+      const randomX =
+        Math.random() * maxX;
+
+      const randomY =
+        Math.random() * maxY;
+
+
+      intentionNoButton.style.position =
+        "absolute";
+
+      intentionNoButton.style.left =
+        randomX + "px";
+
+      intentionNoButton.style.top =
+        randomY + "px";
+
+    }
+
+
+    intentionNoButton.addEventListener(
+      "mouseenter",
+      moveIntentionNoButton
+    );
+
+
+    intentionNoButton.addEventListener(
+      "touchstart",
+      function(event) {
+
+        event.preventDefault();
+
+        moveIntentionNoButton();
+
+      },
+      {
+        passive: false
+      }
+    );
+
+  </script>
+
+</body>
+</html>
